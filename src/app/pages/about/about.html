@@ -1,0 +1,104 @@
+<section class="section">
+  <div class="container story">
+    <div class="story-text">
+      <p class="eyebrow">About me</p>
+      <h1>From Hightstown to shipping my own product</h1>
+      <p class="lede">
+        I grew up in Hightstown, New Jersey, and I've been drawn to technology for as long as I can
+        remember. That curiosity took me to Rutgers, where I earned a B.A. in Information Technology
+        and Informatics with a minor in Digital Communication, Information, and Media. The minor
+        taught me something code alone doesn't: how people actually experience what you put in
+        front of them.
+      </p>
+      <p>
+        After graduating, I stopped treating tech as a subject and started treating it as a craft.
+        I founded <a routerLink="/projects" fragment="obsidiantrading">ObsidianTrading</a>, a
+        trading journal that's live in beta, and taught myself most of what it took to ship it:
+        authentication, payments, database security, a broker API integration, and the compliance
+        work that came with it. Now I'm strengthening my fundamentals in Revature's software
+        development program, working in C#, ASP.NET Core, Entity Framework Core, SQL Server, and
+        Angular.
+      </p>
+      <p>
+        I'm early in my career, and I'm upfront about that. What I bring is follow-through. I've
+        been a lifeguard for eight years and now supervise teams at Princeton University and
+        Forsgate Country Club, where I train staff, manage schedules across facilities, and stay
+        steady when something goes wrong. I bring the same mindset to a codebase: pay attention,
+        take ownership, and see it through.
+      </p>
+    </div>
+    <figure class="side-photo">
+      <picture>
+        <source srcset="images/avatar.webp" type="image/webp" />
+        <img src="images/avatar.jpg" alt="Isaiah Thornton" width="400" height="400" loading="lazy" />
+      </picture>
+      <figcaption>
+        <strong>{{ profile.education.degree }}</strong>
+        <span>{{ profile.education.school }} · {{ profile.education.date }}</span>
+        <span>{{ profile.education.detail }}</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <p class="eyebrow">Experience</p>
+    <h2>Where I've been</h2>
+    <ol class="timeline">
+      @for (job of experience; track job.title) {
+        <li>
+          <div class="when">{{ job.dates }}</div>
+          <div class="what">
+            <h3>{{ job.title }}</h3>
+            <p class="org">{{ job.org }}</p>
+            <ul>
+              @for (pt of job.points; track pt) {
+                <li>{{ pt }}</li>
+              }
+            </ul>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Skills</p>
+    <h2>What I work with</h2>
+    <div class="skills">
+      @for (group of skills; track group.label) {
+        <div class="skill-group">
+          <h3>{{ group.label }}</h3>
+          <ul class="chips">
+            @for (s of group.items; track s) {
+              <li class="chip">{{ s }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <p class="eyebrow">Beyond the code</p>
+    <h2>Who I am off the clock</h2>
+    <div class="beyond">
+      @for (b of beyond; track b.title) {
+        <div>
+          <h3>{{ b.title }}</h3>
+          <p>{{ b.text }}</p>
+        </div>
+      }
+    </div>
+    <p class="blog">
+      Read more on
+      <a [href]="profile.blog" target="_blank" rel="noopener">my blog</a>, or
+      <a routerLink="/contact">say hello</a>.
+    </p>
+  </div>
+</section>

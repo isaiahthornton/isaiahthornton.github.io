@@ -1,0 +1,73 @@
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="intro">
+      <p class="eyebrow">Full-stack software developer</p>
+      <h1>Hi, I'm Isaiah. I build software that <em>ships.</em></h1>
+      <p class="lede">
+        Rutgers graduate in Information Technology and Informatics, founder of a live web app, and
+        currently sharpening my C#/.NET and Angular skills at Revature. I'd rather learn by
+        shipping something real than by reading about it.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" routerLink="/projects">See my work</a>
+        <a class="btn btn-ghost" routerLink="/contact">Get in touch</a>
+      </div>
+      <p class="loc">
+        <span aria-hidden="true">●</span> Based in {{ profile.location }} · Open to entry-level
+        software, cybersecurity, and data roles
+      </p>
+    </div>
+
+    <figure class="portrait">
+      <picture>
+        <source srcset="images/headshot.webp" type="image/webp" />
+        <img src="images/headshot.jpg" alt="Portrait of Isaiah Thornton" width="600" height="800" />
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<section class="now">
+  <div class="container">
+    <h2 class="sr-only">What I'm doing now</h2>
+    <ul class="now-grid">
+      @for (item of now; track item.label) {
+        <li>
+          <span class="now-label">{{ item.label }}</span>
+          <p>{{ item.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects</h2>
+      </div>
+      <a routerLink="/projects" class="all">All projects <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="project-grid">
+      @for (p of projects; track p.slug) {
+        <app-project-card [project]="p" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container band-inner">
+    <div>
+      <p class="eyebrow">How I work</p>
+      <h2>I own the decisions. AI speeds up the work.</h2>
+    </div>
+    <p class="lede">
+      I use Claude Code every day as an agentic partner for implementation, debugging, and QA,
+      while I own the architecture, security, and quality calls. When AI-assisted testing turned up
+      security holes in my own app, I was the one who traced, fixed, and hardened them.
+    </p>
+  </div>
+</section>

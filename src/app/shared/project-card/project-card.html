@@ -1,0 +1,38 @@
+@let p = project();
+<article class="card" [class.detailed]="detailed()" [id]="p.slug">
+  <a class="thumb" [href]="p.links[0].url" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+    <img [src]="p.image" [alt]="p.imageAlt" width="1200" height="630" loading="lazy" />
+  </a>
+
+  <div class="body">
+    <p class="eyebrow">{{ p.kicker }} · {{ p.year }}</p>
+    <h3>{{ p.name }}</h3>
+    <p class="role">{{ p.role }}</p>
+    <p class="summary">{{ p.summary }}</p>
+
+    @if (detailed()) {
+      <ul class="highlights">
+        @for (h of p.highlights; track h) {
+          <li>{{ h }}</li>
+        }
+      </ul>
+    }
+
+    <ul class="chips" aria-label="Technologies used">
+      @for (t of p.tech; track t) {
+        <li class="chip">{{ t }}</li>
+      }
+    </ul>
+
+    <div class="actions">
+      @for (link of p.links; track link.url) {
+        <a class="btn btn-primary" [href]="link.url" target="_blank" rel="noopener">
+          {{ link.label }} <span aria-hidden="true">↗</span>
+        </a>
+      }
+      @if (!detailed()) {
+        <a class="btn btn-ghost" routerLink="/projects" [fragment]="p.slug">Read more</a>
+      }
+    </div>
+  </div>
+</article>
