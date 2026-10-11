@@ -6,9 +6,10 @@
       <p class="lede">
         I grew up in Hightstown, New Jersey, and I've been drawn to technology for as long as I can
         remember. That curiosity took me to Rutgers, where I earned a B.A. in Information Technology
-        and Informatics with a minor in Digital Communication, Information, and Media. The minor
-        taught me something code alone doesn't: how people actually experience what you put in
-        front of them.
+        and Informatics with two minors. Critical Intelligence Studies trained me to think like an
+        analyst: weigh sources, spot threats, and reason about risk. Digital Communication,
+        Information, and Media taught me something code alone doesn't: how people actually
+        experience what you put in front of them.
       </p>
       <p>
         After graduating, I stopped treating tech as a subject and started treating it as a craft.
@@ -34,7 +35,13 @@
       <figcaption>
         <strong>{{ profile.education.degree }}</strong>
         <span>{{ profile.education.school }} · {{ profile.education.date }}</span>
-        <span>{{ profile.education.detail }}</span>
+        <span class="minors-label">Minors</span>
+        <ul class="minors">
+          @for (m of profile.education.minors; track m) {
+            <li>{{ m }}</li>
+          }
+        </ul>
+        <span>{{ profile.education.honors }}</span>
       </figcaption>
     </figure>
   </div>

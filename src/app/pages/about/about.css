@@ -35,6 +35,30 @@ figcaption {
   color: var(--ink-soft);
 }
 
+.minors-label {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.minors {
+  margin: 0 0 10px;
+  padding-left: 1.1em;
+}
+
+.minors li {
+  margin-bottom: 4px;
+}
+
+.minors li::marker {
+  color: var(--terracotta);
+}
+
 figcaption strong {
   font-family: var(--font-display);
   font-weight: 500;

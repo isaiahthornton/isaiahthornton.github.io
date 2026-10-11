@@ -42,7 +42,8 @@ export const PROFILE = {
   education: {
     school: 'Rutgers University, New Brunswick',
     degree: 'B.A., Information Technology and Informatics',
-    detail: "Minor in Digital Communication, Information, and Media · Dean's List",
+    minors: ['Critical Intelligence Studies', 'Digital Communication, Information, and Media'],
+    honors: "Dean's List",
     date: 'May 2026',
   },
 };
