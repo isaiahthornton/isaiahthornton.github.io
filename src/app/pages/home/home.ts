@@ -23,8 +23,8 @@ export class Home {
       text: 'Revature software development program: C#, ASP.NET Core, EF Core, SQL Server, and Angular.',
     },
     {
-      label: 'Leading',
-      text: 'Lifeguard teams as Head Lifeguard and Supervisor at Princeton University and Forsgate.',
+      label: 'Looking for',
+      text: 'Entry-level roles in software development, cybersecurity, or data.',
     },
   ];
 }

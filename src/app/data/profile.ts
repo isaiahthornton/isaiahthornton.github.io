@@ -131,10 +131,9 @@ export const EXPERIENCE: Experience[] = [
   {
     title: 'Head Lifeguard and Supervisor',
     org: 'Princeton University · Forsgate Country Club',
-    dates: 'May 2018 – present',
+    dates: '2018 – 2026',
     points: [
-      'Supervise daily operations across multiple facilities: staff scheduling, safety compliance, and emergency readiness.',
-      'Train, mentor, and evaluate junior staff, and respond to incidents in real time, then investigate and document them.',
+      'Led staff across multiple facilities: trained and evaluated junior staff, managed scheduling, and handled incidents calmly under pressure.',
     ],
   },
 ];
